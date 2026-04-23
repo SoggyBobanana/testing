@@ -7,8 +7,9 @@
   </head>
   <body>
     
+    
     <div class="container">
-      <form class="form">
+      <form class="form" onsubmit="goToDashboard(event)">
         <h2>Register</h2>
         
         <input type="text" placeholder="full name" required>
@@ -19,5 +20,14 @@
         <button type="submit">Sign in</button>
       </form>
     </div>
+    
+    <script>
+    function goToDashboard(event){
+    event.preventDefault();
+    
+    window.location.href="dashboard.html";
+    }
+    </script>
+    
   </body>
 </html>
