@@ -21,11 +21,12 @@ body{
 
 section{
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
   width:100%;
   height:100%;
-  background: url("bg.jpg") no repeat;
+  background: url("bg.jpg") no-repeat;
   background-size:cover;
   background-position:center;
 }
@@ -69,6 +70,18 @@ header{
 
 .profile, .subscription, .total{
   padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin:20px 0;
+}
+
+.subscription{
+  gap:15px;
+}
+
+.subscription, .glass{
+  margin:10px 0;
 }
 
 .card{
@@ -109,12 +122,18 @@ header{
   width:300px;
 }
 
-.form h2{
-  text-align:center;
-  margin-bottom:20px;
+form{
+  width:100%;
 }
 
-.form input{
+form h2{
+  font size:2em;
+  text-align:center;
+  margin-bottom:20px;
+  color:white;
+}
+
+form input{
     width:100%;
     padding:10px;
     margin:8px 0;
@@ -122,7 +141,7 @@ header{
     border-radius:5px;
 }
 
-.form button{
+form button{
   width:100%;
   padding:10px;
   margin-top:10px;
@@ -142,8 +161,10 @@ header{
 .login-box{
   position:relative;
   width:400px;
-  height:450px;
-  background:transparent;
+  padding:40px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border:1px solid rgba(255, 255, 255, 0.2);
   border-radius:20px;
   display:flex;
   justify-content:center;
@@ -170,6 +191,30 @@ header{
   width:100%;
   height:50px;
   background:transparent;
+  border:none;
+  outline:none;
+  color:white;
+  font-size:1em;
+  padding:0 35px 0 5px;
+  border-bottom:2px solid #667eea;
+}
+
+.input-box .icon{
+  position:absolute;
+  right:8px;
+  color:white;
+  font-size:1.2em;
+  line-height:57px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.input-box input:focus{
+  border-bottom:2px solid #667eea;
+}
+
+.input-box input:focus ~ label, .input-box input:valid ~ label{
+  top:-5px;
+  font-size:0.8em;
 }
 
 .remember-forgot{
@@ -181,7 +226,15 @@ header{
 }
 
 .remember-forgot label input{
-  margin-right:3px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  cursor:pointer;
+}
+
+.remember-forgot input[type="checkbox"]{
+  accent-color:#667eea;
+  transform:scale(1.1);
 }
 
 .remember-forgot a {
@@ -222,3 +275,26 @@ button{
 .register-link p a:hover{
   text-decoration:underline;
 }
+
+@keyframes floatIcon{
+  0%{
+    transform:translateY(-50%) translateY(0px);
+  }
+  50%{
+    transform:translateY(-50%) translateY(-4px);
+  }
+  100%{
+    translateY(-50%) translateY(0px)
+  }
+}
+
+
+/*** need a bit fixing cuz i think i just put only specific one for register.html => style.css not as a whole can be use wholely
+
+
+
+
+
+
+
+
